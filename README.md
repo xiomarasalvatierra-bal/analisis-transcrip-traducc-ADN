@@ -1,6 +1,6 @@
 # Análisis de Secuencias Genéticas en Python
 
-**Algoritmo en Python para analizar secuencias de ADN, transcribir a ARN, traducir codones y detectar mutaciones.**
+**Algoritmo básico en Python para analizar secuencias de ADN, transcribir a ARN, traducir codones y detectar mutaciones.**
 
 ---
 
