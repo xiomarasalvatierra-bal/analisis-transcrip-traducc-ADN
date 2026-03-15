@@ -135,4 +135,4 @@ def detectar_mutaciones(ref, muestra):
         if ref[i] != muestra[i]:
             mutaciones.append((i+1, ref[i], muestra[i]))
 
-            return mutaciones
+    return mutaciones
