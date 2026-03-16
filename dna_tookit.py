@@ -1,137 +1,145 @@
-#---------------------ANÁLISIS GENERAL DEL ADN-----------------
-def analisis_adn(adn):
+#---------------------GENERAL DNA ANALYSIS-----------------
+def dna_analysis(dna):
 
-    tamanio_adn = len(adn)
+    dna_length = len(dna)
 
-    a = adn.count('A')
-    c = adn.count('C')
-    t = adn.count('T')
-    g = adn.count('G')
+    a = dna.count('A')
+    c = dna.count('C')
+    t = dna.count('T')
+    g = dna.count('G')
 
-    contenido_gc = ((g+c)/tamanio_adn)*100
+    gc_content = ((g + c) / dna_length) * 100
 
-    return contenido_gc, a, c, t, g, tamanio_adn
+    return gc_content, a, c, t, g, dna_length
 
-#---------------------TRANSCRIPCIÓN ADN A ARN---------------------
-def transcripcion_adn(adn):
 
-    arn = adn.replace('T', 'U')
+#---------------------DNA TO RNA TRANSCRIPTION---------------------
+def dna_transcription(dna):
 
-    return arn
+    rna = dna.replace('T', 'U')
 
-#---------------------TRADUCIR CODONES ---------------------------
-def traducir_codones(arn):
-    tabla_codones = {
+    return rna
 
-        "AUG": "Metionina",
 
-        "UUU": "Fenilalanina",
-        "UUC": "Fenilalanina",
+#---------------------CODON TRANSLATION---------------------------
+def translate_codons(rna):
 
-        "UUA": "Leucina",
-        "UUG": "Leucina",
+    codon_table = {
 
-        "CUU": "Leucina",
-        "CUC": "Leucina",
-        "CUA": "Leucina",
-        "CUG": "Leucina",
+        "AUG": "Methionine",
 
-        "AUU": "Isoleucina",
-        "AUC": "Isoleucina",
-        "AUA": "Isoleucina",
+        "UUU": "Phenylalanine",
+        "UUC": "Phenylalanine",
 
-        "GUU": "Valina",
-        "GUC": "Valina",
-        "GUA": "Valina",
-        "GUG": "Valina",
+        "UUA": "Leucine",
+        "UUG": "Leucine",
 
-        "UCU": "Serina",
-        "UCC": "Serina",
-        "UCA": "Serina",
-        "UCG": "Serina",
+        "CUU": "Leucine",
+        "CUC": "Leucine",
+        "CUA": "Leucine",
+        "CUG": "Leucine",
 
-        "CCU": "Prolina",
-        "CCC": "Prolina",
-        "CCA": "Prolina",
-        "CCG": "Prolina",
+        "AUU": "Isoleucine",
+        "AUC": "Isoleucine",
+        "AUA": "Isoleucine",
 
-        "ACU": "Treonina",
-        "ACC": "Treonina",
-        "ACA": "Treonina",
-        "ACG": "Treonina",
+        "GUU": "Valine",
+        "GUC": "Valine",
+        "GUA": "Valine",
+        "GUG": "Valine",
 
-        "GCU": "Alanina",
-        "GCC": "Alanina",
-        "GCA": "Alanina",
-        "GCG": "Alanina",
+        "UCU": "Serine",
+        "UCC": "Serine",
+        "UCA": "Serine",
+        "UCG": "Serine",
 
-        "UAU": "Tirosina",
-        "UAC": "Tirosina",
+        "CCU": "Proline",
+        "CCC": "Proline",
+        "CCA": "Proline",
+        "CCG": "Proline",
 
-        "CAU": "Histidina",
-        "CAC": "Histidina",
+        "ACU": "Threonine",
+        "ACC": "Threonine",
+        "ACA": "Threonine",
+        "ACG": "Threonine",
 
-        "CAA": "Glutamina",
-        "CAG": "Glutamina",
+        "GCU": "Alanine",
+        "GCC": "Alanine",
+        "GCA": "Alanine",
+        "GCG": "Alanine",
 
-        "AAU": "Asparagina",
-        "AAC": "Asparagina",
+        "UAU": "Tyrosine",
+        "UAC": "Tyrosine",
 
-        "AAA": "Lisina",
-        "AAG": "Lisina",
+        "CAU": "Histidine",
+        "CAC": "Histidine",
 
-        "GAU": "Ácido aspártico",
-        "GAC": "Ácido aspártico",
+        "CAA": "Glutamine",
+        "CAG": "Glutamine",
 
-        "GAA": "Ácido glutámico",
-        "GAG": "Ácido glutámico",
+        "AAU": "Asparagine",
+        "AAC": "Asparagine",
 
-        "UGU": "Cisteína",
-        "UGC": "Cisteína",
+        "AAA": "Lysine",
+        "AAG": "Lysine",
 
-        "UGG": "Triptófano",
+        "GAU": "Aspartic Acid",
+        "GAC": "Aspartic Acid",
 
-        "CGU": "Arginina",
-        "CGC": "Arginina",
-        "CGA": "Arginina",
-        "CGG": "Arginina",
+        "GAA": "Glutamic Acid",
+        "GAG": "Glutamic Acid",
 
-        "AGU": "Serina",
-        "AGC": "Serina",
+        "UGU": "Cysteine",
+        "UGC": "Cysteine",
 
-        "AGA": "Arginina",
-        "AGG": "Arginina",
+        "UGG": "Tryptophan",
 
-        "GGU": "Glicina",
-        "GGC": "Glicina",
-        "GGA": "Glicina",
-        "GGG": "Glicina",
+        "CGU": "Arginine",
+        "CGC": "Arginine",
+        "CGA": "Arginine",
+        "CGG": "Arginine",
+
+        "AGU": "Serine",
+        "AGC": "Serine",
+
+        "AGA": "Arginine",
+        "AGG": "Arginine",
+
+        "GGU": "Glycine",
+        "GGC": "Glycine",
+        "GGA": "Glycine",
+        "GGG": "Glycine",
 
         "UAA": "STOP",
         "UAG": "STOP",
         "UGA": "STOP"
     }
 
-    proteinas = []
+    proteins = []
 
-    for i in range(0, len(arn), 3):
+    for i in range(0, len(rna), 3):
 
-        codon = arn[i:i+3]             #CADA 3
-        amino = tabla_codones.get(codon, "Desconocido")
+        codon = rna[i:i+3]      # read every 3 bases
+        amino_acid = codon_table.get(codon, "Unknown")
 
-
-        if amino == "STOP":
+        if amino_acid == "STOP":
             break
 
-        proteinas.append(amino)
+        proteins.append(amino_acid)
 
-    return proteinas
+    return proteins
 
-#-------------------RECONOCER MUTACIONES-----------------------
-def detectar_mutaciones(ref, muestra):
-    mutaciones = []
 
-    for i in range (len(ref)):
+#-------------------MUTATION DETECTION-----------------------
+def detect_mutations(reference, sample):
+
+    mutations = []
+
+    for i in range(len(reference)):
+        if reference[i] != sample[i]:
+            mutations.append((i + 1, reference[i], sample[i]))
+
+    return mutations
         if ref[i] != muestra[i]:
             mutaciones.append((i+1, ref[i], muestra[i]))
 
