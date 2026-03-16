@@ -1,25 +1,39 @@
-# Análisis de Secuencias Genéticas en Python
+# Genetic Sequence Analysis in Python
 
-**Algoritmo básico en Python para analizar secuencias de ADN, transcribir a ARN, traducir codones y detectar mutaciones.**
-
----
-
-## Descripción
-
-Este proyecto implementa un pipeline básico de bioinformática que permite:
-
-- Analizar secuencias de ADN.
-- Transcribir ADN a ARN.
-- Traducir codones a proteínas.
-- Reconocer mutaciones comparando secuencias de referencia y secuencias de prueba.
-
-Es ideal para aprender cómo funcionan los procesos fundamentales de la biología molecular en un contexto computacional.
+**Basic Python algorithm to analyze DNA sequences, transcribe them into RNA, translate codons, and detect mutations.**
 
 ---
 
-## Funcionalidades
+## Description
 
-- `analisis_adn(adn)` – valida y procesa la secuencia de ADN.  
-- `transcripcion_adn(adn)` – convierte ADN a ARN.  
-- `traducir_codones(arn)` – genera la cadena de proteínas correspondiente.  
-- `detectar_mutaciones(ref, muestra)` – compara secuencias y reporta diferencias.
+This project implements a basic bioinformatics pipeline that allows:
+
+- Analysis of DNA sequences
+- DNA to RNA transcription
+- Codon-to-protein translation
+- Mutation detection by comparing reference and sample sequences
+
+It is designed as an educational project to understand how fundamental molecular biology processes can be implemented in a computational context.
+
+---
+
+## Features
+
+- `analisis_adn(adn)` – validates and processes a DNA sequence  
+- `transcripcion_adn(adn)` – converts DNA into RNA  
+- `traducir_codones(arn)` – generates the corresponding protein sequence  
+- `detectar_mutaciones(ref, muestra)` – compares sequences and reports mutations
+
+---
+
+## Technologies Used
+
+- Python
+
+---
+
+## Learning Objectives
+
+- Understand the computational representation of DNA sequences
+- Implement basic bioinformatics concepts using Python
+- Practice string manipulation and algorithmic thinking applied to biology
