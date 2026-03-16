@@ -1,58 +1,57 @@
-from dna_tookit import analisis_adn, transcripcion_adn, traducir_codones, detectar_mutaciones
+from dna_toolkit import dna_analysis, dna_transcription, translate_codons, detect_mutations
 
-#---------------------ANÁLISIS GENERAL DEL ADN-----------------
+#---------------------GENERAL DNA ANALYSIS-----------------
 while True:
-    adn = input("Ingrese la secuencia ADN: ").upper()
+    dna = input("Enter the DNA sequence: ").upper()
 
-    if set(adn).issubset({"A","C","G","T"}):
+    if set(dna).issubset({"A", "C", "G", "T"}):
         break
     else:
-        print("Error: Ingresa solo A, C, G o T.")
+        print("Error: Enter only A, C, G, or T.")
 
-print("Secuencia aceptada:", adn)
+print("Accepted sequence:", dna)
 
-#--------CONTENIDO DE GC---------
-contenido_gc, a, c, t, g, tamanio_adn = analisis_adn(adn)
+#--------GC CONTENT---------
+gc_content, a, c, t, g, dna_length = dna_analysis(dna)
 
-print("Tamaño del ADN: ", tamanio_adn)
-print("A: ", a)
-print("C: ", c)
-print("T: ", t)
-print("G: ", g)
-print("Contenido de GC: ", contenido_gc)
-
-
-#---------------------TRANSCRIPCIÓN ADN A ARN---------------------
-arn = transcripcion_adn(adn)
-print("Transcripción del ADN: ", arn)
+print("DNA length:", dna_length)
+print("A:", a)
+print("C:", c)
+print("T:", t)
+print("G:", g)
+print("GC Content:", gc_content)
 
 
-#---------------------TRADUCIR CODONES ---------------------------
-proteina = traducir_codones(arn)
-print("Proteínas: ", proteina)
+#---------------------DNA TO RNA TRANSCRIPTION---------------------
+rna = dna_transcription(dna)
+print("DNA transcription:", rna)
 
 
-#-------------------RECONOCER MUTACIONES-----------------------
+#---------------------CODON TRANSLATION---------------------------
+protein = translate_codons(rna)
+print("Proteins:", protein)
 
-ref = adn
-print("Referencia: ", ref)
+
+#-------------------MUTATION DETECTION-----------------------
+
+reference = dna
+print("Reference sequence:", reference)
 
 while True:
-    muestra = input("Ingrese la secuencia a comparar: ").upper()
+    sample = input("Enter the sequence to compare: ").upper()
 
-    if not set(muestra).issubset({"A","C","G","T"}):
-        print("Error: Ingresa solo A, C, G o T.")
+    if not set(sample).issubset({"A", "C", "G", "T"}):
+        print("Error: Enter only A, C, G, or T.")
         continue
 
-    if len(muestra) != len(ref):
-        print("Error: Ingresa la misma cantidad de bases nitrogenadas que la referencia.")
+    if len(sample) != len(reference):
+        print("Error: Enter the same number of nucleotides as the reference sequence.")
         continue
 
     break
 
-print("Secuencia a comparar:", muestra)
+print("Sequence to compare:", sample)
 
+mutations = detect_mutations(reference, sample)
 
-mutaciones = detectar_mutaciones(ref, muestra)
-
-print("Mutaciones: ", mutaciones)
+print("Mutations:", mutations)
