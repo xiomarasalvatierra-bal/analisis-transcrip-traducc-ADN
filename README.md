@@ -40,11 +40,12 @@ It is designed as an educational project to understand how fundamental molecular
 
 ---
 
-## Nuevas funcionalidades
+## New Features
 
-- Clasificación automática de mutaciones en:
-  - Silenciosas
-  - Missense
-  - Nonsense
-- Evaluación del impacto potencial en la proteína
-- Proporciona una estimación del impacto biológico de cada mutación sobre la proteína resultante, esto permite profundizar en los datos genéticos.
+* Automatic classification of mutations into:
+
+  * Silent
+  * Missense
+  * Nonsense
+* Evaluation of the potential impact on the protein
+* Provides an estimation of the biological impact of each mutation on the resulting protein, enabling deeper insights into genetic data.
