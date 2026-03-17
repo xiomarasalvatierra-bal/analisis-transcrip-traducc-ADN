@@ -37,3 +37,14 @@ It is designed as an educational project to understand how fundamental molecular
 - Understand the computational representation of DNA sequences
 - Implement basic bioinformatics concepts using Python
 - Practice string manipulation and algorithmic thinking applied to biology
+
+---
+
+## Nuevas funcionalidades
+
+- Clasificación automática de mutaciones en:
+  - Silenciosas
+  - Missense
+  - Nonsense
+- Evaluación del impacto potencial en la proteína
+- Proporciona una estimación del impacto biológico de cada mutación sobre la proteína resultante, esto permite profundizar en los datos genéticos.
