@@ -17,26 +17,79 @@ def dna_transcription(dna):
 
 # --------------------- CODON TABLE -----------------
 codon_table = {
-    "AUG": "Met",
-    "UUU": "Phe", "UUC": "Phe",
-    "UUA": "Leu", "UUG": "Leu", "CUU": "Leu", "CUC": "Leu", "CUA": "Leu", "CUG": "Leu",
-    "AUU": "Ile", "AUC": "Ile", "AUA": "Ile",
-    "GUU": "Val", "GUC": "Val", "GUA": "Val", "GUG": "Val",
-    "UCU": "Ser", "UCC": "Ser", "UCA": "Ser", "UCG": "Ser", "AGU": "Ser", "AGC": "Ser",
-    "CCU": "Pro", "CCC": "Pro", "CCA": "Pro", "CCG": "Pro",
-    "ACU": "Thr", "ACC": "Thr", "ACA": "Thr", "ACG": "Thr",
-    "GCU": "Ala", "GCC": "Ala", "GCA": "Ala", "GCG": "Ala",
-    "UAU": "Tyr", "UAC": "Tyr",
-    "CAU": "His", "CAC": "His",
-    "CAA": "Gln", "CAG": "Gln",
-    "AAU": "Asn", "AAC": "Asn",
-    "AAA": "Lys", "AAG": "Lys",
-    "GAU": "Asp", "GAC": "Asp",
-    "GAA": "Glu", "GAG": "Glu",
-    "UGU": "Cys", "UGC": "Cys",
-    "UGG": "Trp",
-    "CGU": "Arg", "CGC": "Arg", "CGA": "Arg", "CGG": "Arg", "AGA": "Arg", "AGG": "Arg",
-    "GGU": "Gly", "GGC": "Gly", "GGA": "Gly", "GGG": "Gly",
+
+    # Methionine (Start)
+    "AUG": "Methionine",
+
+    # Phenylalanine
+    "UUU": "Phenylalanine", "UUC": "Phenylalanine",
+
+    # Leucine
+    "UUA": "Leucine", "UUG": "Leucine",
+    "CUU": "Leucine", "CUC": "Leucine",
+    "CUA": "Leucine", "CUG": "Leucine",
+
+    # Isoleucine
+    "AUU": "Isoleucine", "AUC": "Isoleucine", "AUA": "Isoleucine",
+
+    # Valine
+    "GUU": "Valine", "GUC": "Valine",
+    "GUA": "Valine", "GUG": "Valine",
+
+    # Serine
+    "UCU": "Serine", "UCC": "Serine",
+    "UCA": "Serine", "UCG": "Serine",
+    "AGU": "Serine", "AGC": "Serine",
+
+    # Proline
+    "CCU": "Proline", "CCC": "Proline",
+    "CCA": "Proline", "CCG": "Proline",
+
+    # Threonine
+    "ACU": "Threonine", "ACC": "Threonine",
+    "ACA": "Threonine", "ACG": "Threonine",
+
+    # Alanine
+    "GCU": "Alanine", "GCC": "Alanine",
+    "GCA": "Alanine", "GCG": "Alanine",
+
+    # Tyrosine
+    "UAU": "Tyrosine", "UAC": "Tyrosine",
+
+    # Histidine
+    "CAU": "Histidine", "CAC": "Histidine",
+
+    # Glutamine
+    "CAA": "Glutamine", "CAG": "Glutamine",
+
+    # Asparagine
+    "AAU": "Asparagine", "AAC": "Asparagine",
+
+    # Lysine
+    "AAA": "Lysine", "AAG": "Lysine",
+
+    # Aspartic Acid
+    "GAU": "Aspartic Acid", "GAC": "Aspartic Acid",
+
+    # Glutamic Acid
+    "GAA": "Glutamic Acid", "GAG": "Glutamic Acid",
+
+    # Cysteine
+    "UGU": "Cysteine", "UGC": "Cysteine",
+
+    # Tryptophan
+    "UGG": "Tryptophan",
+
+    # Arginine
+    "CGU": "Arginine", "CGC": "Arginine",
+    "CGA": "Arginine", "CGG": "Arginine",
+    "AGA": "Arginine", "AGG": "Arginine",
+
+    # Glycine
+    "GGU": "Glycine", "GGC": "Glycine",
+    "GGA": "Glycine", "GGG": "Glycine",
+
+    # STOP codons
     "UAA": "STOP", "UAG": "STOP", "UGA": "STOP"
 }
 
