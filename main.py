@@ -1,6 +1,6 @@
-from dna_toolkit import dna_analysis, dna_transcription, translate_codons, detect_mutations
+from dna_toolkit import dna_analysis, dna_transcription, detect_point_mutations
 
-#---------------------GENERAL DNA ANALYSIS-----------------
+# --------------------- GENERAL DNA ANALYSIS -----------------
 while True:
     dna = input("Enter the DNA sequence: ").upper()
 
@@ -9,33 +9,27 @@ while True:
     else:
         print("Error: Enter only A, C, G, or T.")
 
-print("Accepted sequence:", dna)
+print("\nAccepted sequence:", dna)
 
-#--------GC CONTENT---------
+# -------- GC CONTENT ---------
 gc_content, a, c, t, g, dna_length = dna_analysis(dna)
 
-print("DNA length:", dna_length)
+print("\nDNA length:", dna_length)
 print("A:", a)
 print("C:", c)
 print("T:", t)
 print("G:", g)
-print("GC Content:", gc_content)
+print("GC Content:", round(gc_content, 2), "%")
 
 
-#---------------------DNA TO RNA TRANSCRIPTION---------------------
+# --------------------- DNA TO RNA ---------------------
 rna = dna_transcription(dna)
-print("DNA transcription:", rna)
+print("\nRNA transcription:", rna)
 
 
-#---------------------CODON TRANSLATION---------------------------
-protein = translate_codons(rna)
-print("Proteins:", protein)
-
-
-#-------------------MUTATION DETECTION-----------------------
-
+# --------------------- MUTATION ANALYSIS ---------------------
 reference = dna
-print("Reference sequence:", reference)
+print("\nReference sequence:", reference)
 
 while True:
     sample = input("Enter the sequence to compare: ").upper()
@@ -46,8 +40,19 @@ while True:
 
     break
 
-print("Sequence to compare:", sample)
+print("\nSequence to compare:", sample)
 
-mutations = detect_mutations(reference, sample)
+results = detect_point_mutations(reference, sample)
 
-print("Mutations:", mutations)
+print("\n=== MUTATION ANALYSIS ===")
+
+if isinstance(results, str):
+    print(results)
+else:
+    print("Total mutations:", len(results))
+
+    for m in results:
+        print(f"\nCodon {m['codon_position']}:")
+        print(f"{m['codon_ref']} → {m['codon_mut']}")
+        print(f"{m['aa_ref']} → {m['aa_mut']}")
+        print(f"Type: {m['type']}")
