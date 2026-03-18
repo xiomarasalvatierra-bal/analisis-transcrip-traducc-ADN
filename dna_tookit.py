@@ -132,7 +132,6 @@ def translate_codons(rna):
 
 #-------------------MUTATION DETECTION-----------------------
 def detect_mutations(reference, sample):
-
     mutations = []
 
     for i in range(len(reference)):
@@ -140,7 +139,3 @@ def detect_mutations(reference, sample):
             mutations.append((i + 1, reference[i], sample[i]))
 
     return mutations
-        if ref[i] != muestra[i]:
-            mutaciones.append((i+1, ref[i], muestra[i]))
-
-    return mutaciones
