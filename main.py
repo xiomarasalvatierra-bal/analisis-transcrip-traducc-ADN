@@ -44,10 +44,6 @@ while True:
         print("Error: Enter only A, C, G, or T.")
         continue
 
-    if len(sample) != len(reference):
-        print("Error: Enter the same number of nucleotides as the reference sequence.")
-        continue
-
     break
 
 print("Sequence to compare:", sample)
