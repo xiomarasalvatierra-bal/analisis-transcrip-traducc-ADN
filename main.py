@@ -38,6 +38,14 @@ while True:
         print("Error: Enter only A, C, G, or T.")
         continue
 
+    if len(sample) != len(reference):
+        print("Error: Sequence must have the same length as reference.")
+        continue
+
+    if len(sample) % 3 != 0:
+        print("Error: Sequence length must be multiple of 3.")
+        continue
+
     break
 
 print("\nSequence to compare:", sample)
