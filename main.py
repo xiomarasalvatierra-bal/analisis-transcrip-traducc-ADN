@@ -1,4 +1,4 @@
-from dna_toolkit import dna_analysis, dna_transcription, detect_point_mutations
+from dna_tookit import dna_analysis, dna_transcription, detect_point_mutations
 
 # --------------------- GENERAL DNA ANALYSIS -----------------
 while True:
